@@ -20,7 +20,7 @@ public class BoardService {
         this.boardRepository = boardRepository;
     }
 
-    @Cacheable(cacheNames = "getBoards", key = "'boards:page:' + #page + ':size:' + #size", cacheManager = "boardCacheManager")
+//    @Cacheable(cacheNames = "getBoards", key = "'boards:page:' + #page + ':size:' + #size", cacheManager = "boardCacheManager")
     public List<Board> getBoards(int page, int size) {
 
         Pageable pageable = PageRequest.of(page - 1, size);
